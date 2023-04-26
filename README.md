@@ -1,1 +1,1 @@
-# nlp-classification
+# An emsembled pipeline for text classification

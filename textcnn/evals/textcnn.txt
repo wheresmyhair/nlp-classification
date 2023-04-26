@@ -1,0 +1,236 @@
+TextCNN
+Model(
+  (embedding): Embedding(1957, 300, padding_idx=1956)
+  (convs): ModuleList(
+    (0): Conv2d(1, 256, kernel_size=(2, 300), stride=(1, 1))
+    (1): Conv2d(1, 256, kernel_size=(3, 300), stride=(1, 1))
+    (2): Conv2d(1, 256, kernel_size=(4, 300), stride=(1, 1))
+  )
+  (dropout): Dropout(p=0.5, inplace=False)
+  (fc): Linear(in_features=768, out_features=2, bias=True)
+)
+
+>>> train(config, model, train_iter, dev_iter, test_iter)
+Epoch [1/100]
+Iter:      0,  Train Loss:   1.0,  Train Acc: 35.94%,  Val Loss:  0.61,                 Val Acc: 78.12%,  Time: 0:00:05 *
+Epoch [2/100]
+Epoch [3/100]
+Epoch [4/100]
+Epoch [5/100]
+Epoch [6/100]
+Epoch [7/100]
+Epoch [8/100]
+Epoch [9/100]
+Epoch [10/100]
+Epoch [11/100]
+Iter:    100,  Train Loss: 0.014,  Train Acc: 100.00%,  Val Loss:  0.28,                 Val Acc: 87.50%,  Time: 0:01:33 *
+Epoch [12/100]
+Epoch [13/100]
+Epoch [14/100]
+Epoch [15/100]
+Epoch [16/100]
+Epoch [17/100]
+Epoch [18/100]
+Epoch [19/100]
+Epoch [20/100]
+Epoch [21/100]
+Iter:    200,  Train Loss: 0.004,  Train Acc: 100.00%,  Val Loss:  0.31,                 Val Acc: 87.50%,  Time: 0:03:04
+Epoch [22/100]
+Epoch [23/100]
+Epoch [24/100]
+Epoch [25/100]
+Epoch [26/100]
+Epoch [27/100]
+Epoch [28/100]
+Epoch [29/100]
+Epoch [30/100]
+Epoch [31/100]
+Iter:    300,  Train Loss: 0.0016,  Train Acc: 100.00%,  Val Loss:  0.34,                 Val Acc: 87.50%,  Time: 0:04:39
+Epoch [32/100]
+Epoch [33/100]
+Epoch [34/100]
+Epoch [35/100]
+Epoch [36/100]
+Epoch [37/100]
+Epoch [38/100]
+Epoch [39/100]
+Epoch [40/100]
+Epoch [41/100]
+Iter:    400,  Train Loss: 0.0013,  Train Acc: 100.00%,  Val Loss:  0.34,                 Val Acc: 87.50%,  Time: 0:06:14
+Epoch [42/100]
+Epoch [43/100]
+Epoch [44/100]
+Epoch [45/100]
+Epoch [46/100]
+Epoch [47/100]
+Epoch [48/100]
+Epoch [49/100]
+Epoch [50/100]
+Epoch [51/100]
+Iter:    500,  Train Loss: 0.00038,  Train Acc: 100.00%,  Val Loss:  0.36,                 Val Acc: 86.72%,  Time: 0:07:50
+Epoch [52/100]
+Epoch [53/100]
+Epoch [54/100]
+Epoch [55/100]
+Epoch [56/100]
+Epoch [57/100]
+Epoch [58/100]
+Epoch [59/100]
+Epoch [60/100]
+Epoch [61/100]
+Iter:    600,  Train Loss: 0.00038,  Train Acc: 100.00%,  Val Loss:  0.37,                 Val Acc: 86.72%,  Time: 0:09:25
+Epoch [62/100]
+Epoch [63/100]
+Epoch [64/100]
+Epoch [65/100]
+Epoch [66/100]
+Epoch [67/100]
+Epoch [68/100]
+Epoch [69/100]
+Epoch [70/100]
+Epoch [71/100]
+Iter:    700,  Train Loss: 0.00048,  Train Acc: 100.00%,  Val Loss:  0.38,                 Val Acc: 86.72%,  Time: 0:11:08
+Epoch [72/100]
+Epoch [73/100]
+Epoch [74/100]
+Epoch [75/100]
+Epoch [76/100]
+Epoch [77/100]
+Epoch [78/100]
+Epoch [79/100]
+Epoch [80/100]
+Epoch [81/100]
+Iter:    800,  Train Loss: 0.00049,  Train Acc: 100.00%,  Val Loss:   0.4,                 Val Acc: 86.72%,  Time: 0:12:50
+Epoch [82/100]
+Epoch [83/100]
+Epoch [84/100]
+Epoch [85/100]
+Epoch [86/100]
+Epoch [87/100]
+Epoch [88/100]
+Epoch [89/100]
+Epoch [90/100]
+Epoch [91/100]
+Iter:    900,  Train Loss: 0.00034,  Train Acc: 100.00%,  Val Loss:   0.4,                 Val Acc: 85.94%,  Time: 0:14:36
+Epoch [92/100]
+Epoch [93/100]
+Epoch [94/100]
+Epoch [95/100]
+Epoch [96/100]
+Epoch [97/100]
+Epoch [98/100]
+Epoch [99/100]
+Epoch [100/100]
+Test Loss:  0.27,  Test Acc: 89.06%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support  
+
+          金融     0.9388    0.9200    0.9293       100
+          其他     0.7333    0.7857    0.7586        28
+
+    accuracy                         0.8906       128  
+   macro avg     0.8361    0.8529    0.8440       128  
+weighted avg     0.8938    0.8906    0.8920       128  
+
+Confusion Matrix...
+[[92  8]
+ [ 6 22]]
+Time usage: 0:00:00
+
+
+
+>>> text = "请给我一张不用还款的信用卡"
+>>> print("待预测分类的短文本：",text)
+待预测分类的短文本： 请给我一张不用还款的信用卡
+>>> textid = build_onedata(config,text)
+>>> print('文本转换成词id：',textid)
+文本转换成词id： [[30, 206, 27, 22, 434, 18, 7, 26, 10, 1, 24, 7, 11, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956]]
+>>> inpt = torch.LongTensor([textid]).to(config.device)
+>>> print("输入模型的数据：",inpt)
+输入模型的数据： tensor([[[  30,  206,   27,   22,  434,   18,    7,   26,   10,    1,   24,
+             7,   11, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956,
+          1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956]]],
+       device='cuda:0')
+>>> # model.eval()
+>>>
+>>> with torch.no_grad():
+...     outputs = model(inpt)
+...     print("预测结果：",outputs.data)
+...     predic = torch.max(outputs.data, 1)[1].cpu().numpy()
+...     print("预测分类标号：",predic)
+...     config.class_list
+...
+预测结果： tensor([[-2.5008,  2.4968]], device='cuda:0')
+预测分类标号： [1]
+
+
+
+>>> text = "今天吃肯德基"
+>>> print("待预测分类的短文本：",text)
+待预测分类的短文本： 今天吃肯德基
+>>> textid = build_onedata(config,text)
+>>> print('文本转换成词id：',textid)
+文本转换成词id： [[573, 179, 1245, 1069, 1338, 251, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956]]
+>>> inpt = torch.LongTensor([textid]).to(config.device)
+>>> print("输入模型的数据：",inpt)
+输入模型的数据： tensor([[[ 573,  179, 1245, 1069, 1338,  251, 1956, 1956, 1956, 1956, 1956,
+          1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956,
+          1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956]]],
+       device='cuda:0')
+>>>
+>>> with torch.no_grad():
+...     outputs = model(inpt)
+...     print("预测结果：",outputs.data)
+...     predic = torch.max(outputs.data, 1)[1].cpu().numpy()
+...     print("预测分类标号：",predic)
+...
+预测结果： tensor([[ 0.1448, -0.6706]], device='cuda:0')
+预测分类标号： [0]
+
+>>> text = "今天吃肯德基，然后去超市买西瓜，回家后洗衣服"
+>>> print("待预测分类的短文本：",text)
+待预测分类的短文本： 今天吃肯德基，然后去超市买西瓜，回家后洗衣服
+>>> textid = build_onedata(config,text)
+>>> print('文本转换成词id：',textid)
+文本转换成词id： [[573, 179, 1245, 1069, 1338, 251, 0, 316, 61, 242, 329, 331, 113, 697, 1955, 0, 358, 208, 61, 1332, 1955, 222, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956]]
+>>> inpt = torch.LongTensor([textid]).to(config.device)
+>>> print("输入模型的数据：",inpt)
+输入模型的数据： tensor([[[ 573,  179, 1245, 1069, 1338,  251,    0,  316,   61,  242,  329,
+           331,  113,  697, 1955,    0,  358,  208,   61, 1332, 1955,  222,
+          1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956]]],
+       device='cuda:0')
+>>>
+>>> with torch.no_grad():
+...     outputs = model(inpt)
+...     print("预测结果：",outputs.data)
+...     predic = torch.max(outputs.data, 1)[1].cpu().numpy()
+...     print("预测分类标号：",predic)
+...
+预测结果： tensor([[ 0.4042, -1.5270]], device='cuda:0')
+预测分类标号： [0]
+
+>>> text = "请问去哪里能借到低息贷款？"
+>>> print("待预测分类的短文本：",text)
+待预测分类的短文本： 请问去哪里能借到低息贷款？
+>>> textid = build_onedata(config,text)
+>>> print('文本转换成词id：',textid)
+文本转换成词id： [[30, 237, 242, 267, 318, 41, 166, 55, 311, 101, 21, 10, 62, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956]]
+>>> inpt = torch.LongTensor([textid]).to(config.device)
+>>> print("输入模型的数据：",inpt)
+输入模型的数据： tensor([[[  30,  237,  242,  267,  318,   41,  166,   55,  311,  101,   21,
+            10,   62, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956,
+          1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956, 1956]]],
+       device='cuda:0')
+>>>
+>>> with torch.no_grad():
+...     outputs = model(inpt)
+...     print("预测结果：",outputs.data)
+...     predic = torch.max(outputs.data, 1)[1].cpu().numpy()
+...     print("预测分类标号：",predic)
+...
+预测结果： tensor([[-1.8916,  1.1623]], device='cuda:0')
+预测分类标号： [1]
+
+
+
+

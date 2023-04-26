@@ -1,0 +1,136 @@
+Model(
+  (embedding): Embedding(1957, 300, padding_idx=1956)
+  (lstm): LSTM(300, 128, num_layers=2, batch_first=True, dropout=0.5, bidirectional=True)
+  (tanh1): Tanh()
+  (tanh2): Tanh()
+  (fc1): Linear(in_features=256, out_features=64, bias=True)
+  (fc): Linear(in_features=64, out_features=2, bias=True)
+)
+
+
+>>> train(config, model, train_iter, dev_iter, test_iter)
+Epoch [1/100]
+Could not load symbol cublasGetSmCountTarget from cublas64_11.dll. Error code 127
+Iter:      0,  Train Loss:  0.61,  Train Acc: 100.00%,  Val Loss:  0.63,                 Val Acc: 78.12%,  Time: 0:00:00 *
+Epoch [2/100]
+Epoch [3/100]
+Epoch [4/100]
+Epoch [5/100]
+Epoch [6/100]
+Epoch [7/100]
+Epoch [8/100]
+Epoch [9/100]
+Epoch [10/100]
+Epoch [11/100]
+Iter:    100,  Train Loss: 0.0025,  Train Acc: 100.00%,  Val Loss:  0.38,                 Val Acc: 87.50%,  Time: 0:00:03 *
+Epoch [12/100]
+Epoch [13/100]
+Epoch [14/100]
+Epoch [15/100]
+Epoch [16/100]
+Epoch [17/100]
+Epoch [18/100]
+Epoch [19/100]
+Epoch [20/100]
+Epoch [21/100]
+Iter:    200,  Train Loss: 0.0056,  Train Acc: 100.00%,  Val Loss:  0.54,                 Val Acc: 86.72%,  Time: 0:00:05
+Epoch [22/100]
+Epoch [23/100]
+Epoch [24/100]
+Epoch [25/100]
+Epoch [26/100]
+Epoch [27/100]
+Epoch [28/100]
+Epoch [29/100]
+Epoch [30/100]
+Epoch [31/100]
+Iter:    300,  Train Loss: 3.7e-05,  Train Acc: 100.00%,  Val Loss:  0.85,                 Val Acc: 86.72%,  Time: 0:00:07
+Epoch [32/100]
+Epoch [33/100]
+Epoch [34/100]
+Epoch [35/100]
+Epoch [36/100]
+Epoch [37/100]
+Epoch [38/100]
+Epoch [39/100]
+Epoch [40/100]
+Epoch [41/100]
+Iter:    400,  Train Loss: 1.3e-05,  Train Acc: 100.00%,  Val Loss:   1.0,                 Val Acc: 85.94%,  Time: 0:00:10
+Epoch [42/100]
+Epoch [43/100]
+Epoch [44/100]
+Epoch [45/100]
+Epoch [46/100]
+Epoch [47/100]
+Epoch [49/100]
+Epoch [50/100]
+Epoch [51/100]
+Iter:    500,  Train Loss: 1.2e-05,  Train Acc: 100.00%,  Val Loss:   1.1,                 Val Acc: 85.94%,  Time: 0:00:12
+Epoch [52/100]
+Epoch [53/100]
+Epoch [54/100]
+Epoch [55/100]
+Epoch [56/100]
+Epoch [57/100]
+Epoch [58/100]
+Epoch [59/100]
+Epoch [60/100]
+Epoch [61/100]
+Iter:    600,  Train Loss: 6.2e-06,  Train Acc: 100.00%,  Val Loss:   1.2,                 Val Acc: 85.94%,  Time: 0:00:14
+Epoch [62/100]
+Epoch [63/100]
+Epoch [64/100]
+Epoch [65/100]
+Epoch [66/100]
+Epoch [67/100]
+Epoch [68/100]
+Epoch [69/100]
+Epoch [70/100]
+Epoch [71/100]
+Iter:    700,  Train Loss: 3.7e-06,  Train Acc: 100.00%,  Val Loss:   1.2,                 Val Acc: 85.94%,  Time: 0:00:17
+Epoch [72/100]
+Epoch [73/100]
+Epoch [74/100]
+Epoch [75/100]
+Epoch [76/100]
+Epoch [77/100]
+Epoch [78/100]
+Epoch [79/100]
+Epoch [80/100]
+Epoch [81/100]
+Iter:    800,  Train Loss: 1.6e-06,  Train Acc: 100.00%,  Val Loss:   1.2,                 Val Acc: 85.94%,  Time: 0:00:19
+Epoch [82/100]
+Epoch [83/100]
+Epoch [84/100]
+Epoch [85/100]
+Epoch [86/100]
+Epoch [87/100]
+Epoch [88/100]
+Epoch [89/100]
+Epoch [90/100]
+Epoch [91/100]
+Iter:    900,  Train Loss: 1.2e-06,  Train Acc: 100.00%,  Val Loss:   1.2,                 Val Acc: 85.94%,  Time: 0:00:21
+Epoch [92/100]
+Epoch [93/100]
+Epoch [94/100]
+Epoch [95/100]
+Epoch [96/100]
+Epoch [97/100]
+Epoch [98/100]
+Epoch [99/100]
+Epoch [100/100]
+Test Loss:  0.59,  Test Acc: 83.59%
+Precision, Recall and F1-Score...
+              precision    recall  f1-score   support
+
+          金融     0.9438    0.8400    0.8889       100
+          其他     0.5897    0.8214    0.6866        28
+
+    accuracy                         0.8359       128
+   macro avg     0.7668    0.8307    0.7877       128
+weighted avg     0.8664    0.8359    0.8446       128
+
+Confusion Matrix...
+[[84 16]
+ [ 5 23]]
+Time usage: 0:00:00
